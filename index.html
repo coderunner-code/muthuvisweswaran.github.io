@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M. Muthu Visweswaran | Legal Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f9f6f0;
+      --gray: #6b7280;
+      --light-gray: #f3f4f6;
+      --white: #ffffff;
+      --border: #e5e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(10,22,40,0.97);
+      backdrop-filter: blur(10px);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, #112240 60%, #1a3a5c 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; max-width: 800px; }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    .hero-university {
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    .hero-contact {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      justify-content: center; margin-bottom: 2.5rem;
+    }
+    .contact-chip {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.8);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .contact-chip:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); color: var(--gold); }
+    .contact-chip svg { width: 14px; height: 14px; }
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--navy);
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0;
+      width: 60px; height: 2px;
+      background: var(--gold);
+    }
+
+    /* ABOUT */
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about-text p { color: #4b5563; line-height: 1.8; margin-bottom: 1rem; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem;
+      border-radius: 4px;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* EDUCATION */
+    #education { background: var(--cream); }
+    .edu-cards { display: grid; gap: 1.2rem; }
+    .edu-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem 2rem;
+      display: flex; align-items: flex-start; gap: 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+    .edu-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .edu-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), #1a3a5c);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold); font-size: 1.2rem;
+    }
+    .edu-degree { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
+    .edu-school { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .edu-detail { color: var(--gray); font-size: 0.85rem; }
+
+    /* EXPERIENCE */
+    #experience { background: var(--white); }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--gold), var(--border));
+    }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-dot {
+      position: absolute; left: -2.4rem; top: 0.3rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .exp-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+    .exp-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem; }
+    .exp-firm { font-weight: 700; font-size: 1rem; color: var(--navy); }
+    .exp-location { font-size: 0.82rem; color: var(--gold); font-weight: 500; }
+    .exp-date {
+      font-size: 0.78rem; color: var(--white);
+      background: var(--navy);
+      padding: 0.25rem 0.75rem;
+      border-radius: 2rem;
+      white-space: nowrap;
+    }
+    .exp-tasks { list-style: none; padding: 0; }
+    .exp-tasks li {
+      color: #4b5563;
+      font-size: 0.88rem;
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .exp-tasks li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--gold); font-size: 0.75rem; top: 0.4rem;
+    }
+
+    /* ACHIEVEMENTS */
+    #achievements { background: var(--cream); }
+    .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .ach-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .ach-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); transform: translateY(-3px); }
+    .ach-icon {
+      width: 48px; height: 48px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1rem;
+    }
+    .ach-icon.pub { background: #fef3c7; }
+    .ach-icon.moot { background: #dbeafe; }
+    .ach-icon.aid { background: #d1fae5; }
+    .ach-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .ach-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.6; }
+
+    /* SKILLS */
+    #skills { background: var(--white); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
+    .skill-group h3 {
+      font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem; font-weight: 600;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 0.82rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 2rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .skill-tag:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+    /* LEADERSHIP */
+    #leadership { background: var(--cream); }
+    .lead-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .lead-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.4rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .lead-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--gold); margin-top: 0.45rem; flex-shrink: 0;
+    }
+    .lead-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .lead-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2.5rem;
+      font-size: 0.85rem;
+    }
+    footer strong { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">M. Muthu Visweswaran</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#leadership">Leadership</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">BA LLB (Hons.) — Final Year</div>
+    <h1>M. Muthu <span>Visweswaran</span></h1>
+    <p class="hero-sub">Legal Professional | Public Policy & Research</p>
+    <p class="hero-university">School of Law, SASTRA University · Hyderabad, Telangana</p>
+    <div class="hero-contact">
+      <a href="tel:+919789406312" class="contact-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013 12.81a19.79 19.79 0 01-3.07-8.67A2 2 0 011.95 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +91 97894 06312
+      </a>
+      <a href="mailto:muthuvisweswaran@gmail.com" class="contact-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        muthuvisweswaran@gmail.com
+      </a>
+    </div>
+    <a href="#experience" class="hero-cta">View My Experience →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">Who I Am</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a dedicated final-year law student at SASTRA University with a keen interest in Public Policy and legal research. With a strong foundation in taxation law, arbitration, intellectual property, and commercial law, I bring both theoretical understanding and practical experience.</p>
+        <p>My internship journey spans across some of India's reputed law firms and chambers, giving me exposure to diverse practice areas including GST litigation, electricity regulation, arbitration, and civil matters. I am passionate about contributing meaningfully to the legal profession through continuous learning and hands-on experience.</p>
+        <p>Beyond academics, I communicate complex legal concepts through social media to bridge the gap between law and the general public — a reflection of my belief that legal literacy is a civic necessity.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Internships</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Publications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">7.04</div>
+          <div class="stat-label">CGPA</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Practice Areas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label">Academic Background</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-cards">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-degree">BA LLB (Hons.) — 10th Semester</div>
+          <div class="edu-school">School of Law, SASTRA University</div>
+          <div class="edu-detail">CGPA: 7.04 &nbsp;|&nbsp; Currently Pursuing</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📘</div>
+        <div>
+          <div class="edu-degree">XII Standard</div>
+          <div class="edu-school">National Institute of Open Schooling (NIOS)</div>
+          <div class="edu-detail">Score: 78%</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📗</div>
+        <div>
+          <div class="edu-degree">X Standard — ICSE Curriculum</div>
+          <div class="edu-school">Riverside Public School, The Nilgiris</div>
+          <div class="edu-detail">Score: 72%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Professional Journey</p>
+    <h2 class="section-title">Internship Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">CKR Associates</div>
+              <div class="exp-location">Hyderabad</div>
+            </div>
+            <span class="exp-date">Jan 2026 – Present</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>In-depth research on Cross Subsidy Surcharge under Section 42 of the Electricity Act.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">K. Vaitheeswaran & Co.</div>
+              <div class="exp-location">Chennai</div>
+            </div>
+            <span class="exp-date">Jun – Jul 2025</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>Researched blocked credits between employer and employees under Section 17 of the CGST Act.</li>
+            <li>Researched GST Council Meeting proceedings concerning the Goods Transport Agency (GTA).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">M/s. Ramani & Shankar Advocates</div>
+              <div class="exp-location">Coimbatore</div>
+            </div>
+            <span class="exp-date">Dec 2024 – Jan 2025</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>Researched application of arbitral awards post-expiry under Sections 29A and 34 of the Arbitration and Conciliation Act, 1996.</li>
+            <li>Assisted in preparing a Due Diligence report; researched voting rights in an LLP and enforcement of foreign judgements in reciprocating territories.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">M/s. Ramani & Shankar Advocates</div>
+              <div class="exp-location">Coimbatore</div>
+            </div>
+            <span class="exp-date">Jun – Jul 2024</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>Researched appointment of Receiver, death of arbitrator, and Section 26 of the Arbitration and Conciliation Act, 1996.</li>
+            <li>Researched RBI Notifications & Circulars and the MSME Act.</li>
+            <li>Drafted a proposition based on Sections 9 and 11 of the Trademarks Act, 1999, and assisted in preparing the reply.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">Adv. Achuta Srinivasa Rao</div>
+              <div class="exp-location">Jangareddigudem</div>
+            </div>
+            <span class="exp-date">Jan – Feb 2024</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>Assisted in criminal law research by finding relevant precedents.</li>
+            <li>Assisted in drafting petitions and other legal documents.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">M/s. Govind Chandrasekhar & Sharath Chandran</div>
+              <div class="exp-location">Chennai</div>
+            </div>
+            <span class="exp-date">Jul 2023</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>Assisted in legal research, drafting affidavits, and preparing case briefs for Writ and Civil matters.</li>
+            <li>Assisted with client meetings and attended court hearings.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">M/s. K. N. Lakshminarayanan & Associates</div>
+              <div class="exp-location">Coimbatore</div>
+            </div>
+            <span class="exp-date">Jan – Feb 2023</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>Researched legal matters under the SARFAESI Act.</li>
+            <li>Assisted in court filings and prepared case briefs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-firm">M/s. K. N. Lakshminarayanan & Associates</div>
+              <div class="exp-location">Coimbatore</div>
+            </div>
+            <span class="exp-date">Jul – Aug 2022</span>
+          </div>
+          <ul class="exp-tasks">
+            <li>Researched precedents for Civil and Family law matters.</li>
+            <li>Assisted in preparing case briefs.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <p class="section-label">Recognition & Contributions</p>
+    <h2 class="section-title">Achievements</h2>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-icon pub">📄</div>
+        <div class="ach-title">Research Publication — IJFMR</div>
+        <div class="ach-desc">"Pressure Power Parity: Insufficiency of Protection for Workers of the Gig Economy and Dire Requirement of Changes in the New Labour Code" — Volume 5, Issue 6 (Nov–Dec 2023).</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon pub">📚</div>
+        <div class="ach-title">Book Chapter — Case Commentary</div>
+        <div class="ach-desc">Case Commentary on R.K. Garg vs. Union of India published in <em>Global Thoughts and Opinions</em> — Justice Deepak Mishra National Call for Chapters, 2023.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon moot">⚖️</div>
+        <div class="ach-title">2nd Runner Up — Moot Court</div>
+        <div class="ach-desc">3rd NMIMS Indore Moot Court Competition, 2025. Also participated in the SASTRA Intra-Moot Competition, 2022.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon aid">🤝</div>
+        <div class="ach-title">Legal Aid Camps</div>
+        <div class="ach-desc">Contributed to community legal aid camps at Paruthikudi, Thiruvaiyar (Sep 2023) and Orathanadu, Thanjavur (Mar 2023).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Core Competencies</p>
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Legal Skills</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Legal Writing</span>
+          <span class="skill-tag">Legal Research</span>
+          <span class="skill-tag">Case Briefing</span>
+          <span class="skill-tag">Drafting</span>
+          <span class="skill-tag">Due Diligence</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Professional Skills</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Analytical Thinking</span>
+          <span class="skill-tag">Team Work</span>
+          <span class="skill-tag">Time Management</span>
+          <span class="skill-tag">Public Speaking</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Tools & Software</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">MS Word</span>
+          <span class="skill-tag">Google Docs</span>
+          <span class="skill-tag">Legal Research Tools</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">English (Professional)</span>
+          <span class="skill-tag">Tamil (Native)</span>
+          <span class="skill-tag">Hindi (Working)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="container">
+    <p class="section-label">Beyond the Classroom</p>
+    <h2 class="section-title">Leadership & Outreach</h2>
+    <div class="lead-cards">
+      <div class="lead-card">
+        <div class="lead-dot"></div>
+        <div>
+          <div class="lead-title">Outreach Head — Plasma Compendium, SASTRA</div>
+          <div class="lead-desc">Led outreach and stakeholder engagement for the flagship legal journal at SASTRA University's School of Law.</div>
+        </div>
+      </div>
+      <div class="lead-card">
+        <div class="lead-dot"></div>
+        <div>
+          <div class="lead-title">Legal Content Creator — Instagram</div>
+          <div class="lead-desc">Developed and managed a dedicated Instagram platform for daily legal updates, translating complex legal concepts into accessible content for a general audience.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>M. Muthu Visweswaran</strong> &nbsp;|&nbsp; School of Law, SASTRA University &nbsp;|&nbsp; Hyderabad, Telangana</p>
+  <p style="margin-top:0.5rem; font-size:0.78rem;">muthuvisweswaran@gmail.com &nbsp;|&nbsp; +91 97894 06312</p>
+</footer>
+
+</body>
+</html>
